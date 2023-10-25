@@ -1,0 +1,612 @@
+/* These css elements style the whole site, and the base.html template */
+
+.transition-on {
+    transition: 0.8s all;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    margin-bottom: 55px;
+}
+
+footer {
+    height: 50px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: yellow;
+    text-shadow: 0 0 1px greenyellow;
+    font-family: 'wallpoet', sans-serif;
+}
+
+.text-greenyellow {
+    color: greenyellow;
+}
+
+.text-white {
+    color: white;
+}
+
+p,
+span {
+    color: white;
+    font-size: 1.1rem;
+}
+
+input {
+    background-color: #00000088;
+    color: inherit;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 4px 8px;
+    text-align: center;
+    width: fit-content;
+}
+
+input[type=range] {
+    width: 85%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+.imitation-button {
+    color: greenyellow;
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    transition: 0.2s all;
+    border: 2px solid #acff2f66;
+    border-radius: 5px;
+    padding: 3px 10px;
+}
+
+button:hover,
+.imitation-button:hover {
+    color: black;
+    text-shadow: 0 0 2px pink;
+    transition: 0.2s all;
+    background-color: #acff2fbb;
+    border: 2px solid greenyellow;
+}
+
+.disabled {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    transition: 0.2s all;
+    border-radius: 5px;
+    padding: 3px 10px;
+    color: gray;
+    text-shadow: none;
+    border: 2px solid gray;
+    opacity: 0.5;
+}
+
+.highlighted-button {
+    background-color: #acff2f22;
+    border: 2px solid greenyellow;
+}
+
+.darker-background {
+    background-image: radial-gradient(#000000dd, #000000aa);
+    border-radius: 20px;
+}
+
+.grey-background {
+    background-image: radial-gradient(#ffffff66, #ffffffcc);
+}
+
+.light-border {
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+#message-holder {
+    height: 60px;
+}
+
+.custom-justbeats-modal {
+    color: yellowgreen;
+    background-color: #555555;
+}
+
+/* These css elements style the navbar */
+
+.home-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.site-logo {
+    font-family: 'outrun';
+}
+
+#logged-in-user {
+    color: yellowgreen;
+}
+
+.navbar-brand {
+    width: 180px;
+    height: 60px;
+}
+
+
+/* These css elements style the loop detail page */
+.large-play-button {
+    color: yellow;
+    border: 3px solid rgb(251, 251, 118);
+    font-size: 80px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.play-button-icon {
+    transform: translateX(5px);
+    pointer-events: none;
+}
+
+.pause-button-icon {
+    pointer-events: none;
+}
+
+.large-play-button:hover {
+    color: #222222;
+    border: 3px solid yellow;
+    background-color: #ffff0088;
+}
+
+.loop-volume {
+    width: 100%;
+    color: yellowgreen !important;
+}
+
+.readonly-beat {
+    display: inline-block;
+    width: 5px;
+    height: 30px;
+    background-color: lightblue;
+    opacity: 0.2;
+    border-radius: 5px;
+}
+
+.readonly-active-beat {
+    opacity: 0.7;
+}
+
+.readonly-highlighted-beat {
+    height: 35px;
+    opacity: 0.4;
+}
+
+.readonly-active-highlighted-beat {
+    height: 35px;
+    opacity: 1.0;
+    color: blue;
+}
+
+#share-loop-title {
+    color: greenyellow;
+}
+
+.copy-icon {
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+#pasteable-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    border: 1px solid gray;
+    padding: 5px 10px;
+    border-radius: 5px;
+    max-width: 80%;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    #pasteable-link {
+        font-size: 0.8rem;
+    }
+
+    .copy-icon {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .large-play-button {
+        font-size: 30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    .play-button-icon {
+        transform: translateX(2px);
+        pointer-events: none;
+    }
+
+    #loop-detail-volume,
+    #loop-detail-volume-label {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .comment-box {
+        font-size: 0.8rem;
+    }
+}
+
+#loop-detail-volume {
+    font-size: 1.8rem;
+}
+
+
+/* These css elements style the review page */
+
+input[type="number"] {
+    color: white;
+    max-width: 100px
+}
+
+.custom-text-area {
+    background-color: #ffffff33;
+    color: white;
+    border: 1px solid gray;
+}
+
+.custom-text-area:focus {
+    background-color: #ffffff77;
+    color: white;
+}
+
+label {
+    color: white;
+    text-shadow: 0 0 1px greenyellow;
+    font-family: 'wallpoet';
+    font-size: 1.1rem;
+}
+
+.review-outline {
+    border: 1px solid #ffffff33;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* These css elements style the drum loop list template ----------*/
+
+.vert-gap-100 {
+    margin-top: 100px;
+}
+
+.vert-gap-200 {
+    margin-top: 200px;
+}
+
+.dark-shadow-text {
+    text-shadow: 0 0 130px black;
+}
+
+.beats-header {
+    color: greenyellow;
+    text-shadow: 0 0 2px pink;
+    font-weight: bolder;
+    width: fit-content;
+}
+
+.drumloop-table {
+    color: white;
+    overflow-x: auto;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-image: radial-gradient(#666666ff, #333333cc);
+    box-shadow: 0 0 20px black;
+}
+
+.drumloop-table-row:hover {
+    color: greenyellow;
+    background-color: #ffffff22;
+}
+
+.drumloop-table thead {
+    color: greenyellow;
+}
+
+.drumloop-table-item {
+    font-size: 1.2rem;
+    padding: 5px 15px;
+    transition: 0.5s all;
+}
+
+.rating-star {
+    font-size: 1.2rem;
+    color: gold;
+}
+
+.play-button:hover {
+    text-shadow: 0 0 5px pink;
+    transition: 0.5s all;
+}
+
+.edit-button {
+    color: yellow;
+    border-color: rgb(249, 249, 137);
+    margin-left: 10px;
+    border: 1px solid rgb(249, 249, 137);
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    border-radius: 5px;
+    padding: 3px 10px;
+}
+
+.edit-button:hover {
+    border-color: yellow;
+    background-color: #ffff0066;
+    color: yellow;
+}
+
+@media screen and (max-width:450px) {
+    .drumloop-table {
+        padding: 2px
+    }
+
+    .drumloop-table-item {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+
+    .play-button {
+        font-size: 1.4rem;
+    }
+
+    .edit-button {
+        font-size: 0.8rem;
+        padding: 3px 5px;
+    }
+
+    .rating-star {
+        font-size: 0.8rem;
+    }
+}
+
+/* These css elements style the drumloop_editor template ---------*/
+
+#drumloop_name {
+    font-size: 1.2rem;
+    color: white;
+}
+
+#tempo {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.medium-play-button {
+    color: yellow;
+    border: 3px solid rgb(251, 251, 118);
+    font-size: 40px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.medium-play-button:hover {
+    color: #222222;
+    border: 3px solid yellow;
+    background-color: #ffff0088;
+}
+
+.track-holder {
+    background-color: #333333aa;
+    padding: 0 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    max-width: 1320px;
+}
+
+.track {
+    display: inline-block;
+}
+
+.track-volume {
+    display: inline-block;
+    color: white;
+    background: yellow;
+    width: 100%;
+}
+
+.beats-holder {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.beat {
+    display: inline-block;
+    width: 10px;
+    height: 32px;
+    background-color: gray;
+    border: 1px solid rgb(116, 221, 125);
+}
+
+.tooltip-inner {
+    background-color: #00cc00;
+}
+
+.beat:nth-child(4n - 3) {
+    display: inline-block;
+    margin-left: 3px;
+    background-color: gray;
+    border: 1px solid rgb(116, 221, 125);
+    height: 35px;
+}
+
+@media screen and (max-width: 600px) {
+    .beat {
+        width: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .beat {
+        width: 10px;
+        margin: 0;
+    }
+
+    .track-holder {
+        padding: 0
+    }
+
+    .beat:nth-child(4n - 3) {
+        margin-left: 1px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 3px;
+    }
+}
+
+.current {
+    border: 2px solid white;
+}
+
+.active_beat {
+    background: radial-gradient(rgb(140, 189, 6), rgb(68, 92, 3));
+}
+
+.beats-field {
+    user-select: none;
+}
+
+.beat-volumes-field {
+    user-select: none;
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.beats-holder,
+.instrument-name,
+.track-volume {
+    display: inline-block;
+}
+
+.instrument-name {
+    color: #bbbbbb;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 3px;
+    border: 1px solid #333333;
+}
+
+.instrument-name:hover {
+    color: white;
+    border: 1px solid white;
+}
+
+/* These elements style the instruction tooltip sequence, copied from the tooltip-sequence 
+   library by Sooraj S Nair, and customized to suit site styling. */
+.tooltip-helper-active-description {
+    background-color: #dddddd !important;
+    font-size: 40px !important;
+    height: 180px !important;
+    padding: 20px !important;
+}
+
+.tooltip-helper-active-description p,
+.tooltip-helper-active-description h3 {
+    color: black !important;
+}
+
+.tooltip-helper-footer {
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px !important;
+}
+
+.tooltip-helper-arrow-down {
+    border-top: 20px solid #dddddd !important;
+}
+
+.tooltip-helper-arrow-up {
+    border-bottom: 20px solid #dddddd !important;
+  }
+
+.tooltip-helper-next-sequence,
+.tooltip-helper-prev-sequence {
+    background-color: inherit !important;
+    border: inherit !important;
+    border-radius: inherit !important;
+    color: black !important;
+}
+
+.tooltip-helper-end-sequence {
+    background-color: inherit !important;
+    border: inherit !important;
+    border-radius: inherit !important;
+    color: black !important;
+}
+
+.tooltip-disabled-btn {
+    background-color: #dddddd !important;
+    display: none !important;
+    user-select: none !important;
+    color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+/* These css elements style the instrument selector modal ---------*/
+.selected-instrument {
+    border: 1px solid white;
+}
+
+/* These css elements style the forms */
+.form-holder {
+    color: white;
+    display: block;
+    font-size: 1.5em;
+}
+
+.form-holder input {
+    padding: 5px;
+    margin: 15px;
+}
+
+.signup_form, .signup_form label{
+    display: inline-block;
+}
+
+.large_page_number {
+    color: yellowgreen;
+    font-size: 1.5rem;
+    font-family: 'wallpoet', sans-serif;
+}
+
+.page_number {
+    color: green;
+    font-family: 'wallpoet', sans-serif;
+}
