@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-auto">
+            {% if request.user %}
+            <h3>Profile for {{ request.user.username }}</h3>
+            {% else %}
+            <h1>No user logged in...</h1>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

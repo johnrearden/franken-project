@@ -28,7 +28,10 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEBUG' in os.environ
 
-ALLOWED_HOSTS = ['8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu105.gitpod.io',
+                 'https://8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu105.gitpod.io']
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu105.gitpod.io']
 
 
 # Application definition
@@ -40,9 +43,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'crispy_forms',
     'home',
     'user_profile',
 ]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'frankenproject.urls'
@@ -73,6 +89,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'frankenproject.wsgi.application'
+
+# CRISPY_TEMPLATE_PACK = "tailwind"
 
 
 # Database

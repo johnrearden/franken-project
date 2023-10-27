@@ -1,9 +1,10 @@
 from . import views
 from django.urls import path
-from .views import CreateUserProfileView
+from django.contrib.auth.decorators import login_required
+from .views import UserProfileView
 
 urlpatterns = [
-    path('create_user_profile',
-         views.CreateUserProfileView.as_view(),
-         name='create_user_profile'),
+    path('user_profile',
+         login_required(views.UserProfileView.as_view()),
+         name='user_profile'),
 ]
