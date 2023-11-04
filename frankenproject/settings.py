@@ -35,8 +35,8 @@ DEBUG = 'DEBUG' in os.environ
 ALLOWED_HOSTS = [
     '8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu105.gitpod.io',
     'https://8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu105.gitpod.io',
-    'https://frankenproject-p4-32b18d2d368c.herokuapp.com/',
-    'frankenproject-p4-32b18d2d368c.herokuapp.com/'
+    'https://frankenproject-p4-32b18d2d368c.herokuapp.com',
+    'frankenproject-p4-32b18d2d368c.herokuapp.com'
     ]
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu105.gitpod.io']
