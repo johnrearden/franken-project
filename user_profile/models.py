@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_profile')
     nickname = models.CharField(max_length=6)
     avatar = models.ImageField(
         default='placeholder.png',

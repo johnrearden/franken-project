@@ -1,9 +1,13 @@
-{% extends "account/base_entrance.html" %}
+{% extends "base.html" %}
 {% load allauth i18n socialaccount %}
 {% block head_title %}
     {% trans "Signup" %}
 {% endblock head_title %}
 {% block content %}
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-auto">
     {% element h1 %}
         {% trans "Sign Up" %}
     {% endelement %}
@@ -29,4 +33,5 @@
         {% endslot %}
     {% endelement %}
     {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+    </div></div></div>
 {% endblock content %}

@@ -15,6 +15,7 @@ class UserProfileView(View):
                 existing_profile = None
                 print('no user exists')
                 form = CreateUserProfileForm()
+                print(form.fields['nickname'])
         return render(
             request,
             'user_profile/create_user_profile.html',
@@ -22,19 +23,24 @@ class UserProfileView(View):
 
     def post(self, request):
 
-        submitted_form = CreateUserProfileForm(request.POST, request.FILES)
+        submitted_form = CreateUserProfileForm(
+            request.POST,
+            request.FILES,
+            instance=request.user.user_profile)
 
         if submitted_form.is_valid():
-            new_profile = submitted_form.save(commit=False)
-            new_profile.user = request.user
-            new_profile.save()
+            profile = submitted_form.save(commit=False)
+            print(f'instance: {submitted_form.instance}')
+            print(f'profile: {profile}')
+            #profile.user = request.user
+            profile.save()
             print('form saved')
         else:
             print('form not saved, not valid')
             return render(
                 request,
                 'user_profile/create_user_profile.html',
-                {'form': form}
+                {'form': submitted_form}
             )
         return redirect('home')
 

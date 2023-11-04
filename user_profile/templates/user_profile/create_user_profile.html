@@ -20,6 +20,7 @@
                 {% csrf_token %}
                 {{ form | crispy }}
                 <input type="submit" value="Save Profile">
+                {{ form.errors }}
             </form>
         </div>
     </div>
