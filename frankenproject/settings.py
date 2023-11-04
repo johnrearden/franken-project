@@ -164,8 +164,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # CLOUDINARY CONFIGURATION
 CLOUDINARY_STORAGE = {
-    MEDIA_TAG: "frankenproject_static",
-    STATIC_TAG: "frankenproject_static"
+    'MEDIA_TAG': "frankenproject_static",
+    'STATIC_TAG': "frankenproject_static"
 }
 
 # Default primary key field type
