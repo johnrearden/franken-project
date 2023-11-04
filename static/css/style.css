@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: black;
+    background: url('/static/image/background.jpg') no-repeat center center fixed;
     color: white;
     font-family: 'Kanit', sans-serif;
     margin-bottom: 55px;

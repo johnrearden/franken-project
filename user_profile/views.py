@@ -25,14 +25,11 @@ class UserProfileView(View):
 
         submitted_form = CreateUserProfileForm(
             request.POST,
-            request.FILES,
-            instance=request.user.user_profile)
+            request.FILES)
 
         if submitted_form.is_valid():
             profile = submitted_form.save(commit=False)
-            print(f'instance: {submitted_form.instance}')
-            print(f'profile: {profile}')
-            #profile.user = request.user
+            profile.user = request.user
             profile.save()
             print('form saved')
         else:
