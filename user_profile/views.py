@@ -23,16 +23,24 @@ class UserProfileView(View):
 
     def post(self, request):
 
-        submitted_form = CreateUserProfileForm(
-            request.POST,
-            request.FILES)
+        # Check for an existing profile
+        existing_profile = UserProfile.objects.filter(user=request.user).first()
+        if existing_profile:
+            submitted_form = CreateUserProfileForm(
+                request.POST,
+                request.FILES,
+                instance=existing_profile)
+        else:
+            submitted_form = CreateUserProfileForm(
+                request.POST,
+                request.FILES)
 
         if submitted_form.is_valid():
             profile = submitted_form.save(commit=False)
             profile.user = request.user
             profile.save()
-            print('form saved')
-        else:
+        
+        else: # form not valid
             print('form not saved, not valid')
             return render(
                 request,
