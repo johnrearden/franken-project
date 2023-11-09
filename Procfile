@@ -1,1 +1,1 @@
-web: gunicorn frankenprojec.wsgi
+web: gunicorn frankenproject.wsgi
