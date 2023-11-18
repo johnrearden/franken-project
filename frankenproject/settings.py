@@ -38,7 +38,10 @@ ALLOWED_HOSTS = [
     'frankenproject-p4-32b18d2d368c.herokuapp.com'
     ]
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu105.gitpod.io']
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu105.gitpod.io',
+    'https://8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu106.gitpod.io',
+]
 
 
 # Application definition
@@ -59,6 +62,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'home',
     'user_profile',
+    'diet',
 ]
 
 SITE_ID = 1
