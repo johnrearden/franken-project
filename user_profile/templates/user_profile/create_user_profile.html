@@ -3,27 +3,61 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-4 offset-md-4">
-            {% if existing_profile %}
-            <h3>Edit Your Profile</h3>
-            <img 
-                src="{{ existing_profile.avatar.url }}" 
-                alt="Avatar image of {{ existing_profile.nickname }}"
-                width="100"
-                height="100">
-            {% else %}
-            <h3>Create a Profile</h3>
-            {% endif %}
-
-            <form method="POST" action="" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form | crispy }}
-                <input type="submit" value="Save Profile">
-                {{ form.errors }}
-            </form>
+<div class="container">
+    {% if existing_profile %}
+    <div class="row mt-3 d-flex justify-content-start bg-success bg-opacity-25 align-items-center">
+        <div class="col-auto p-2">
+            <h3>User : {{ existing_profile.user.username }}</h3>
+        </div>
+        <div class="col-auto p-2">
+            <img src="{{ existing_profile.avatar.url }}" alt="Avatar image of {{ existing_profile.nickname }}"
+                height="100" class="profile-image">
+        </div>
+        <div class="col-auto p-2">
+            <video src="{{ existing_profile.video_clip.url }}" width="200" controls></video>
         </div>
     </div>
+
+    {% else %}
+    <h3>Create a Profile</h3>
+    {% endif %}
+
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row mt-2">
+            <div class="col-lg-7">
+                <div class="div border rounded p-2 m-1 bg-secondary bg-opacity-25">
+                    {{ form.nickname.errors }}
+                    {{ form.nickname.label_tag }} {{ form.nickname }}
+                </div>
+                <div class="div border rounded p-2 m-1 bg-secondary bg-opacity-25">
+                    {{ form.avatar.errors }}
+                    {{ form.avatar.label_tag }} {{ form.avatar }}
+                </div>
+                <div class="div border rounded p-2 m-1 bg-secondary bg-opacity-25">
+                    {{ form.video_clip.errors }}
+                    {{ form.video_clip.label_tag }} {{ form.video_clip }}
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="text-center div border rounded p-2 m-1 bg-secondary bg-opacity-25 overflow-hidden">
+                    {{ form.apology.errors }}
+                    {{ form.apology.label_tag }} {{ form.apology }}
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <input class="btn btn-success mt-2" type="submit" value="Save Profile">
+            </div>
+            
+            {{ form.errors }}
+        </div>
+
+
+
+    </form>
+</div>
 
 
 {% endblock %}

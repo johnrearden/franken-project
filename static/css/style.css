@@ -6,6 +6,7 @@
 
 body {
     background-color: #f0f0f0;
+    width: 100vw;
 }
 
 footer {
@@ -29,4 +30,8 @@ a:hover {
 nav a:hover {
     color: white;
     border-color: white;
+}
+
+.profile-image {
+    background-color: black;
 }

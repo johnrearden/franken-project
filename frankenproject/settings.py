@@ -35,12 +35,14 @@ DEBUG = 'DEBUG' in os.environ
 ALLOWED_HOSTS = [
     '8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu106.gitpod.io',
     'https://frankenproject-p4-32b18d2d368c.herokuapp.com',
-    'frankenproject-p4-32b18d2d368c.herokuapp.com'
+    'frankenproject-p4-32b18d2d368c.herokuapp.com',
+    '8000-jbolg-franken-project-ar8afmkolu.us2.codeanyapp.com',
     ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu105.gitpod.io',
     'https://8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu106.gitpod.io',
+    'https://8000-jbolg-franken-project-ar8afmkolu.us2.codeanyapp.com',
 ]
 
 
@@ -63,6 +65,7 @@ INSTALLED_APPS = [
     'home',
     'user_profile',
     'diet',
+    'django_summernote',
 ]
 
 SITE_ID = 1
@@ -175,3 +178,10 @@ CLOUDINARY_STORAGE = {
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        'width': '300',
+        'height': '300',
+    }
+}
