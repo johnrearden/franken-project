@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+from django.contrib.postgres.fields import ArrayField
 
 from cloudinary_storage.storage import VideoMediaCloudinaryStorage
 from cloudinary_storage.validators import validate_video
@@ -24,3 +25,7 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return f'{self.user.username}, nickname={self.nickname}, avatar={self.avatar.url}' 
+
+
+class Thing(models.Model):
+    array = ArrayField(models.IntegerField())

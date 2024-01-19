@@ -9,4 +9,9 @@ urlpatterns = [
         'create_diet',
         login_required(views.CreateDiet.as_view()),
         name="create_diet"),
+    path(
+        'update_diet/<int:pk>/',
+        login_required(views.UpdateDiet.as_view()),
+        name="update_diet",
+    )
 ]
