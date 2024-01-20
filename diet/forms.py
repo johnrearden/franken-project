@@ -8,7 +8,7 @@ class DietForm(ModelForm):
 
     class Meta:
         model = DietPlan
-        fields = ['diet_type', 'start_time']
+        fields = ['diet_type', 'start_time', 'note',]
         widgets = {
             'start_time': Select(choices=HOUR_CHOICES),
         }

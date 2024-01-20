@@ -16,6 +16,7 @@ class DietPlan(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     diet_type = models.CharField(max_length=2, choices=DIET_TYPES, default=1)
     start_time = models.TimeField(default=datetime.time(10, 0))
+    note = models.CharField(max_length=10)
 
     class Meta:
         ordering=('created_on',)
