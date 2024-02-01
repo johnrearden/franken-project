@@ -7,4 +7,7 @@ urlpatterns = [
     path('user_profile',
          login_required(views.UserProfileView.as_view()),
          name='user_profile'),
+    path('api/user_profile',
+          views.UserProfileAPIView.as_view(),
+          name='user_profile_api')
 ]

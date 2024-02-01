@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
+from rest_framework.generics import ListCreateAPIView
 from .forms import CreateUserProfileForm
 from .models import UserProfile
+from .serializers import UserProfileSerializer
 
 
 class UserProfileView(View):
@@ -49,3 +51,8 @@ class UserProfileView(View):
             )
         return redirect('home')
 
+
+class UserProfileAPIView(ListCreateAPIView):
+    serializer_class = UserProfileSerializer
+    permission_classes = []
+    queryset = UserProfile.objects.all()
