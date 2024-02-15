@@ -11,7 +11,7 @@ class DietForm(ModelForm):
         model = DietPlan
         fields = ['diet_type', 'start_time', 'note', 'tags']
         widgets = {
-            'start_time': forms.RadioSelect(choices=HOUR_CHOICES),
+            'start_time': Select(choices=HOUR_CHOICES),
         }
     
     tags = forms.ModelMultipleChoiceField(
