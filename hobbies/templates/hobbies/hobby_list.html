@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% for hobby in hobbies %}
+        <div class="col-md-3 d-flex align-items-stretch">
+            <div class="card w-100">
+                <img 
+                    src="{{ hobby.image.url }}"
+                    class="card-img-top hobby-image"
+                    alt="image for {{ hobby.name}}"
+                >
+                <div class="card-body">
+                    <h5 class="card-title">{{ hobby.name }}</h5>
+                    <p class="card-text">{{ hobby.description }}</p>
+                    <span>{{ hobby.since }}</span>
+                </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+    </div>
+    
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <input type="submit" value="Submit"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

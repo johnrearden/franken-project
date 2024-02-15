@@ -38,6 +38,8 @@ ALLOWED_HOSTS = [
     'https://frankenproject-p4-32b18d2d368c.herokuapp.com',
     'frankenproject-p4-32b18d2d368c.herokuapp.com',
     '8000-jbolg-franken-project-ar8afmkolu.us2.codeanyapp.com',
+    'localhost',
+    '127.0.0.1',
     ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -68,6 +70,7 @@ INSTALLED_APPS = [
     'user_profile',
     'diet',
     'random_map',
+    'hobbies',
     'django_summernote',
 ]
 
