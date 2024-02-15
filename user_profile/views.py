@@ -48,4 +48,3 @@ class UserProfileView(View):
                 {'form': submitted_form}
             )
         return redirect('home')
-
