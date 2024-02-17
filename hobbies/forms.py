@@ -14,6 +14,7 @@ class HobbyForm(forms.ModelForm):
             'description': forms.Textarea(attrs={
                 'cols': 10, 
                 'rows': 2,
-                'placeholder': 'Hobby start time',
+                'placeholder': 'Describe your hobby',
             }),
+            
         }
