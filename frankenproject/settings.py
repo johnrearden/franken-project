@@ -35,6 +35,8 @@ DEBUG = 'DEBUG' in os.environ
 ALLOWED_HOSTS = [
     '8000-johnrearden-frankenproj-0wb17kftpyb.ws-eu107.gitpod.io',
     '8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu106.gitpod.io',
+    '8000-johnrearden-frankenproj-jvo9z5e9hvy.ws-eu108.gitpod.io',
+    '8000-johnrearden-frankenproj-jvo9z5e9hvy.ws-eu110.gitpod.io',
     'https://frankenproject-p4-32b18d2d368c.herokuapp.com',
     'frankenproject-p4-32b18d2d368c.herokuapp.com',
     '8000-jbolg-franken-project-ar8afmkolu.us2.codeanyapp.com',
@@ -46,6 +48,8 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-johnrearden-frankenproj-0wb17kftpyb.ws-eu107.gitpod.io',
     'https://8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu106.gitpod.io',
     'https://8000-jbolg-franken-project-ar8afmkolu.us2.codeanyapp.com',
+    'https://8000-johnrearden-frankenproj-jvo9z5e9hvy.ws-eu108.gitpod.io',
+    'https://8000-johnrearden-frankenproj-jvo9z5e9hvy.ws-eu110.gitpod.io',
 ]
 
 
@@ -118,16 +122,16 @@ WSGI_APPLICATION = 'frankenproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+# }
 
 
 # Password validation
