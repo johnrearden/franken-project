@@ -43,6 +43,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'https://franken-project.onrender.com/',
+    'https://franken-project.onrender.com',
     ]
 
 CSRF_TRUSTED_ORIGINS = [
