@@ -42,6 +42,7 @@ ALLOWED_HOSTS = [
     '8000-jbolg-franken-project-ar8afmkolu.us2.codeanyapp.com',
     'localhost',
     '127.0.0.1',
+    'https://franken-project.onrender.com/',
     ]
 
 CSRF_TRUSTED_ORIGINS = [
