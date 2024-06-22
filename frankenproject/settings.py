@@ -38,6 +38,7 @@ ALLOWED_HOSTS = [
     'https://frankenproject-p4-32b18d2d368c.herokuapp.com',
     'frankenproject-p4-32b18d2d368c.herokuapp.com',
     '8000-jbolg-franken-project-ar8afmkolu.us2.codeanyapp.com',
+    os.environ.get('ALLOWED_HOSTS').split(' '),
     ]
 
 CSRF_TRUSTED_ORIGINS = [
