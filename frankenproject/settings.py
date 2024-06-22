@@ -32,16 +32,7 @@ CLOUDINARY_URL = os.environ['CLOUDINARY_URL']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEBUG' in os.environ
 
-ALLOWED_HOSTS = [
-    '8000-johnrearden-frankenproj-0wb17kftpyb.ws-eu107.gitpod.io',
-    '8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu106.gitpod.io',
-    '8000-johnrearden-frankenproj-jvo9z5e9hvy.ws-eu108.gitpod.io',
-    '8000-johnrearden-frankenproj-jvo9z5e9hvy.ws-eu110.gitpod.io',
-    'https://frankenproject-p4-32b18d2d368c.herokuapp.com',
-    'frankenproject-p4-32b18d2d368c.herokuapp.com',
-    '8000-jbolg-franken-project-ar8afmkolu.us2.codeanyapp.com',
-    os.environ.get('ALLOWED_HOSTS').split(' '),
-    ]
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-johnrearden-frankenproj-0wb17kftpyb.ws-eu107.gitpod.io',
