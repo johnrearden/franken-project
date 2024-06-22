@@ -26,6 +26,7 @@ urlpatterns = [
     path('map/', include('random_map.urls')),
     path('profile/', include('user_profile.urls')),
     path('summernote/', include('django_summernote.urls')),
+    path('hobbies/', include('hobbies.urls')),
 ]
 
 if settings.DEBUG:

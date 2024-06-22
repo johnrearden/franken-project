@@ -33,8 +33,10 @@ CLOUDINARY_URL = os.environ['CLOUDINARY_URL']
 DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu107.gitpod.io',
+    '8000-johnrearden-frankenproj-0wb17kftpyb.ws-eu107.gitpod.io',
     '8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu106.gitpod.io',
+    '8000-johnrearden-frankenproj-jvo9z5e9hvy.ws-eu108.gitpod.io',
+    '8000-johnrearden-frankenproj-jvo9z5e9hvy.ws-eu110.gitpod.io',
     'https://frankenproject-p4-32b18d2d368c.herokuapp.com',
     'frankenproject-p4-32b18d2d368c.herokuapp.com',
     '8000-jbolg-franken-project-ar8afmkolu.us2.codeanyapp.com',
@@ -42,9 +44,11 @@ ALLOWED_HOSTS = [
     ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu107.gitpod.io',
+    'https://8000-johnrearden-frankenproj-0wb17kftpyb.ws-eu107.gitpod.io',
     'https://8000-johnrearden-frankenproj-syk9zdzmo0m.ws-eu106.gitpod.io',
     'https://8000-jbolg-franken-project-ar8afmkolu.us2.codeanyapp.com',
+    'https://8000-johnrearden-frankenproj-jvo9z5e9hvy.ws-eu108.gitpod.io',
+    'https://8000-johnrearden-frankenproj-jvo9z5e9hvy.ws-eu110.gitpod.io',
 ]
 
 
@@ -63,11 +67,14 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
     'crispy_forms',
+    'crispy_bootstrap4',
     'home',
     'user_profile',
     'diet',
     'random_map',
+    'hobbies',
     'django_summernote',
 ]
 
@@ -76,7 +83,13 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login/'
+DEFAULT_FROM_EMAIL = 'boutiqueado@example.com'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -115,16 +128,16 @@ WSGI_APPLICATION = 'frankenproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+# }
 
 
 # Password validation
@@ -190,3 +203,22 @@ SUMMERNOTE_CONFIG = {
 }
 
 GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+)
+
+# SOCIALACCOUNT_PROVIDERS = {
+#     "github": {
+#         "APPS": [
+#             {
+#                 "client_id": "cd0f7b1f66be3368af62",
+#                 "client_secret": "a34159a30165e46569d25acd754e2c08ad70e69f",
+#                 "key": ""
+#             },
+#         ],
+#     },
+# }
